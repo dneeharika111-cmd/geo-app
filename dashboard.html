@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoPulse Dashboard</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">GP</span>
+          <span>GeoPulse</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="products.html">Products</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-shell">
+      <div class="container">
+        <section class="page-hero">
+          <p class="hero-eyebrow">Post-login Dashboard</p>
+          <h1>GeoPulse Control Center</h1>
+          <p>
+            Run GEO audits, inspect AI visibility, research content patterns, and translate AI search
+            findings into practical marketing actions.
+          </p>
+        </section>
+
+        <div class="main-grid">
+          <aside class="sidebar">
+            <p class="section-eyebrow" style="color:#ff6b00;">Navigation</p>
+            <nav class="sidebar-nav" data-sidebar-nav></nav>
+          </aside>
+
+          <div class="content-stack">
+            <section class="card">
+              <div class="card-body">
+                <div class="toolbar">
+                  <div>
+                    <p class="section-eyebrow" style="color:#ff6b00;">Dashboard Overview</p>
+                    <h2 class="section-title">Generative engine optimization made actionable</h2>
+                    <p class="section-copy" style="color:#5b6472;">
+                      Audit AI visibility, research prompt opportunities, and understand how AI systems interpret your content.
+                    </p>
+                  </div>
+                  <div class="toolbar-profile">
+                    <div class="avatar">GP</div>
+                    <div>
+                      <strong>GeoPulse Team</strong>
+                      <div style="color:#5b6472;">Admin</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="cards-4" id="overview">
+              <div class="stat-card">
+                <div class="stat-label">GEO Visibility Score</div>
+                <div class="stat-value" data-stat-visibility>0</div>
+                <p>Current AI visibility across simulated answers.</p>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Total AI Mentions</div>
+                <div class="stat-value" data-stat-mentions>0</div>
+                <p>How often the brand appears in answer sets.</p>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Avg Sentiment Score</div>
+                <div class="stat-value" data-stat-sentiment>0</div>
+                <p>Average tone of simulated AI framing.</p>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Top Performing Queries</div>
+                <div class="stat-value" data-stat-queries>0</div>
+                <p>Best prompts where the brand performs strongly.</p>
+              </div>
+            </section>
+
+            <section class="split-2">
+              <section class="card" id="geo-audit">
+                <div class="card-header">
+                  <p class="section-eyebrow" style="color:#ff6b00;">GEO Audit Tool</p>
+                  <h3 class="section-title">Run a new GEO audit</h3>
+                </div>
+                <div class="card-body">
+                  <form data-audit-form>
+                    <div class="form-grid">
+                      <div class="field">
+                        <label for="websiteUrl">Brand / Website URL</label>
+                        <input id="websiteUrl" value="https://www.saleshandy.com/" />
+                      </div>
+                      <div class="field">
+                        <label for="brandName">Brand Name</label>
+                        <input id="brandName" value="Saleshandy" />
+                      </div>
+                      <div class="field">
+                        <label for="keyword">Target Keywords</label>
+                        <input id="keyword" value="Cold email outreach" />
+                      </div>
+                      <div class="field">
+                        <label for="aiEngine">Select AI Engine</label>
+                        <select id="aiEngine">
+                          <option>ChatGPT</option>
+                          <option>Gemini</option>
+                          <option>Perplexity</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label for="geoLocation">Geo Location</label>
+                        <select id="geoLocation">
+                          <option>Global</option>
+                          <option>United States</option>
+                          <option>India</option>
+                          <option>United Kingdom</option>
+                        </select>
+                      </div>
+                      <div>
+                        <div class="field-legend">Device Type</div>
+                        <div class="pill-row">
+                          <button class="pill-button active" type="button" data-device="Desktop">Desktop</button>
+                          <button class="pill-button" type="button" data-device="Mobile">Mobile</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="button-row" style="margin-top:20px;">
+                      <button class="cta cta-secondary" type="button" data-suggest-keywords>Top Keywords</button>
+                      <button class="cta cta-secondary" type="button" data-run-crawlability>AI Crawlability</button>
+                      <button class="cta cta-secondary" type="button" data-run-geo>Audit GEO</button>
+                      <button class="cta cta-primary" type="submit">Run GEO Audit</button>
+                    </div>
+                    <div class="notice hidden" data-error></div>
+                  </form>
+                </div>
+              </section>
+
+              <section class="card">
+                <div class="card-header">
+                  <p class="section-eyebrow" style="color:#ff6b00;">Results</p>
+                  <h3 class="section-title">AI Visibility Score</h3>
+                </div>
+                <div class="card-body">
+                  <div class="score-panel">
+                    <div class="stat-label" style="color:#ffd8bf;">GEO Score</div>
+                    <div class="score-line">
+                      <div class="score-number" data-score-main>0</div>
+                      <div>/ 100</div>
+                    </div>
+                    <p>AI Visibility Score</p>
+                  </div>
+                  <div class="cards-2" style="margin-top:18px;">
+                    <div class="soft-card">
+                      <div class="stat-label">AI Mentions</div>
+                      <div class="stat-value" data-mentions-main>0</div>
+                      <p>Brand appearance count in generated answers.</p>
+                    </div>
+                    <div class="soft-card">
+                      <div class="stat-label">Sentiment</div>
+                      <div class="stat-value" data-sentiment-main>Neutral</div>
+                      <p>Average response framing from simulated outputs.</p>
+                    </div>
+                  </div>
+                  <div class="soft-card" style="margin-top:18px;">
+                    <div class="stat-label">AI Mention Positions</div>
+                    <div class="list-stack" style="margin-top:12px;" data-positions></div>
+                  </div>
+                </div>
+              </section>
+            </section>
+
+            <section class="card" id="competitors">
+              <div class="card-header">
+                <p class="section-eyebrow" style="color:#ff6b00;">Competitor Comparison</p>
+                <h3 class="section-title">Share of mention inside AI answers</h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-bar-wrap" data-competitor-chart></div>
+              </div>
+            </section>
+
+            <section class="split-2">
+              <section class="card" id="content">
+                <div class="card-header">
+                  <p class="section-eyebrow" style="color:#ff6b00;">Content Research</p>
+                  <h3 class="section-title">What content patterns work in AI answers?</h3>
+                </div>
+                <div class="card-body">
+                  <div class="soft-card">
+                    <div class="stat-label">Top Keywords From Page</div>
+                    <div class="list-stack" style="margin-top:12px;" data-query-insights></div>
+                  </div>
+                  <div class="stat-card" style="margin-top:18px;">
+                    <div class="stat-label">AI Preferred Content Patterns</div>
+                    <div class="list-stack" style="margin-top:12px;" data-patterns></div>
+                  </div>
+                  <div class="stat-card" style="margin-top:18px;">
+                    <div class="stat-label">Top Performing Competitor Content</div>
+                    <div class="list-stack" style="margin-top:12px;" data-competitor-content></div>
+                  </div>
+                  <div style="margin-top:18px;">
+                    <button class="cta cta-primary" type="button">Generate Content Ideas</button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="card" id="crawlability">
+                <div class="card-header">
+                  <p class="section-eyebrow" style="color:#ff6b00;">AI Crawlability Check</p>
+                  <h3 class="section-title">Can AI systems access and understand your content?</h3>
+                </div>
+                <div class="card-body">
+                  <div class="score-panel">
+                    <div class="stat-label" style="color:#ffd8bf;">Crawlability Status</div>
+                    <div class="stat-value" style="color:white;font-size:2.5rem;" data-crawl-status>Not Run</div>
+                  </div>
+                  <div class="soft-card" style="margin-top:18px;">
+                    <div class="stat-label">Issues Detected</div>
+                    <div class="list-stack" style="margin-top:12px;" data-crawl-issues></div>
+                  </div>
+                  <div class="stat-card" style="margin-top:18px;">
+                    <div class="stat-label">AI Readability Score</div>
+                    <div class="stat-value" data-crawl-score>0</div>
+                    <p>How easily AI systems can interpret the page structure.</p>
+                  </div>
+                  <div class="stat-card" style="margin-top:18px;">
+                    <div class="stat-label">Recommendations</div>
+                    <div class="list-stack" style="margin-top:12px;" data-crawl-recommendations></div>
+                  </div>
+                </div>
+              </section>
+            </section>
+
+            <section class="card">
+              <div class="card-header">
+                <p class="section-eyebrow" style="color:#ff6b00;">GEO Parameters</p>
+                <h3 class="section-title">Detailed GEO audit view</h3>
+              </div>
+              <div class="card-body">
+                <div class="score-panel" style="margin-bottom:18px;">
+                  <div class="stat-label" style="color:#ffd8bf;">GEO Score</div>
+                  <div class="score-number" style="font-size:3.4rem;" data-geo-score>0</div>
+                </div>
+                <div class="list-stack" data-geo-checks></div>
+              </div>
+            </section>
+
+            <section class="card" id="reports">
+              <div class="card-header">
+                <div class="toolbar">
+                  <div>
+                    <p class="section-eyebrow" style="color:#ff6b00;">Reports</p>
+                    <h3 class="section-title">Saved audits and exports</h3>
+                  </div>
+                  <div class="button-row">
+                    <button class="cta cta-secondary" type="button">Export PDF</button>
+                    <button class="cta cta-secondary" type="button">Export CSV</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="pill-row" style="margin-bottom:16px;">
+                  <button class="pill-button active" type="button">Date</button>
+                  <button class="pill-button" type="button">AI Engine</button>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Audit</th>
+                        <th>Engine</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody data-reports-body></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section class="card" id="settings">
+              <div class="card-header">
+                <p class="section-eyebrow" style="color:#ff6b00;">Settings</p>
+                <h3 class="section-title">Workspace preferences</h3>
+              </div>
+              <div class="card-body">
+                <div class="cards-2">
+                  <div class="soft-card"><strong>Default Engine</strong><p>ChatGPT</p></div>
+                  <div class="soft-card"><strong>Default Geo</strong><p>Global</p></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="card-header">
+                <p class="section-eyebrow" style="color:#ff6b00;">Sample AI Responses</p>
+                <h3 class="section-title">Generated answers with brand highlights</h3>
+              </div>
+              <div class="card-body">
+                <div class="list-stack" data-responses></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <p>Static HTML dashboard version with client-side demo logic.</p>
+        </footer>
+      </div>
+    </main>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
